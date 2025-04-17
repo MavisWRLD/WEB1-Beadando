@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRUD Táblázat</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .form-container {
+      margin-bottom: 20px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    .search-container {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web-programozás-1 Előadás Házi feladat</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="rolunk.html">Rólunk</a></li>
+      <li><a href="kapcsolat.html">Kapcsolat</a></li>
+      <li class="active"><a href="tabla.html">Táblázat</a></li>
+      <li><a href="html5menu.html">HTML5</a></li>
+      <li><a href="chart.html">Chart</a></li>
+	<li><a href="ajax.html">AJAX</a></li>
+  <li><a href="oojs.html">OOJS</a></li>
+    </ul>
+  </nav>
+
+  <aside>
+    <p>Oldalsáv tartalom</p>
+  </aside>
+
+  <div class="content">
+    <h2>CRUD Táblázat</h2>
+
+    <div class="form-container">
+      <form id="dataForm">
+        <input type="text" id="name" placeholder="Név" required minlength="2" maxlength="30" />
+        <input type="number" id="age" placeholder="Kor" required min="0" max="120" />
+        <input type="text" id="city" placeholder="Város" required minlength="2" maxlength="30" />
+        <input type="email" id="email" placeholder="Email" required />
+        <button type="submit">Hozzáadás</button>
+      </form>
+      <p class="error" id="errorMsg"></p>
+    </div>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Keresés..." />
+    </div>
+
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Név</th>
+          <th onclick="sortTable(1)">Kor</th>
+          <th onclick="sortTable(2)">Város</th>
+          <th onclick="sortTable(3)">Email</th>
+          <th>Műveletek</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>Készítők: Kotlár Botond , Neptunkód:FUHZ21 </p>
+  </footer>
