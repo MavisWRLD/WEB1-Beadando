@@ -26,3 +26,28 @@ body {
   nav li {
     margin: 0;
   }
+  nav a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav .active a,
+  nav a:hover {
+    background-color: #222;
+  }
+  
+  aside {
+    padding: 1rem;
+    background-color: #f0f0f0;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  footer {
+    margin-top: 2rem;
+  }
+  
