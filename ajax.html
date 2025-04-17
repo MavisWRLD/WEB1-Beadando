@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>AJAX feladat</title>
+  <script src="ajax.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Web-programozás-1 Előadás Házi feladat</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="rolunk.html">Rólunk</a></li>
+      <li><a href="kapcsolat.html">Kapcsolat</a></li>
+      <li><a href="tabla.html">Táblázat</a></li>
+      <li><a href="html5menu.html">HTML5</a></li>
+      <li><a href="chart.html">Chart</a></li>
+      <li class="active"><a href="ajax.html">AJAX</a></li>
+      <li><a href="oojs.html">OOJS</a></li>
+    </ul>
+  </nav>
+
+  <aside>
+    <p>Oldalsáv tartalom</p>
+  </aside>
+
+  <div class="content">
+        <h2>AJAX API CRUD</h2>
+
+        <section>
+        <h3>Adatok lekérdezése (Read)</h3>
+        <button onclick="fetchData()">Adatok lekérése</button>
+        <div id="dataList"></div>
+        <div id="heightStats"></div>
+        </section>
+
+        <section>
+        <h3>Új adat hozzáadása (Create)</h3>
+        <input type="text" id="createName" placeholder="Név" maxlength="30" />
+        <input type="text" id="createHeight" placeholder="Magasság" />
+        <button onclick="createData()">Hozzáadás</button>
+        <div id="createMsg"></div>
+        </section>
+   </div>  
+   
+  <footer>
+    <p>Készítők: Kotlár Botond , Neptunkód:FUHZ21 </p>
+  </footer>
+</body>
+</html>
