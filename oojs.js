@@ -30,3 +30,26 @@ class Animal {
       console.log(`${this.name} is barking!`);
     }
   
+
+    // A kutyák speciális megjelenítése
+    display() {
+        const div = document.createElement('div');
+        div.classList.add('animal');
+        div.innerHTML = `<strong>${this.name}</strong> (${this.age} years old, ${this.breed} breed)`;
+        document.getElementById('animals-list').appendChild(div);
+      }
+    }
+    
+    // Példányosítás
+    const animal1 = new Animal("Misi", 5);
+    const dog1 = new Dog("Rex", 3, "Labrador");
+    const dog2 = new Dog("Bodri", 2, "Beagle");
+    
+    // Megjelenítés a DOM-ban
+    animal1.display();
+    dog1.display();
+    dog2.display();
+    
+    // A kutyák ugatása
+    dog1.bark();
+    dog2.bark();
