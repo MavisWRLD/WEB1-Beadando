@@ -14,13 +14,13 @@
   <nav>
     <ul>
       <li><a href="index.html">Kezdőlap</a></li>
-      <li><a href="rolunk.html">Rólunk</a></li>
-      <li><a href="kapcsolat.html">Kapcsolat</a></li>
       <li><a href="tabla.html">Táblázat</a></li>
       <li><a href="html5menu.html">HTML5</a></li>
       <li><a href="chart.html">Chart</a></li>
       <li class="active"><a href="ajax.html">AJAX</a></li>
       <li><a href="oojs.html">OOJS</a></li>
+      <li><a href="jatek1.html">React</a></li>
+
     </ul>
   </nav>
 
@@ -29,24 +29,46 @@
   </aside>
 
   <div class="content">
-        <h2>AJAX API CRUD</h2>
+    <h2>AJAX API CRUD</h2>
+  <section>
+    <h2>Adatok megjelenítése</h2>
+    <button onclick="readData()">Adatok lekérése</button>
+    <div id="data-list"></div>
+    <div id="stats"></div>
+  </section>
 
-        <section>
-        <h3>Adatok lekérdezése (Read)</h3>
-        <button onclick="fetchData()">Adatok lekérése</button>
-        <div id="dataList"></div>
-        <div id="heightStats"></div>
-        </section>
 
-        <section>
-        <h3>Új adat hozzáadása (Create)</h3>
-        <input type="text" id="createName" placeholder="Név" maxlength="30" />
-        <input type="text" id="createHeight" placeholder="Magasság" />
-        <button onclick="createData()">Hozzáadás</button>
-        <div id="createMsg"></div>
-        </section>
-   </div>  
-   
+  <section>
+    <h2>Új adat hozzáadása</h2>
+    <input id="create-name" placeholder="Név" maxlength="30">
+    <input id="create-height" type="text" placeholder="Magasság" maxlength="30">
+    <input id="create-weight" type="text" placeholder="Súly" maxlength="30">
+    <button onclick="createData()">Létrehozás</button>
+    <div id="create-msg"></div>
+  </section>
+
+
+  <section>
+    <h2>Adat módosítása</h2>
+    <input id="update-id" placeholder="ID lekéréshez">
+    <button onclick="getDataForId()">Adat betöltése</button>
+    <button onclick="deleteUpdateId()">Visszavonás</button><br><br>
+    <input id="update-name" placeholder="Név" maxlength="30">
+    <input id="update-height" type="text" placeholder="Magasság" maxlength="30">
+    <input id="update-weight" type="text" placeholder="Súly" maxlength="30">
+    <button onclick="updateData()">Módosítás</button>
+    <div id="update-msg"></div>
+  </section>
+
+
+  <section>
+    <h2>Adat törlése</h2>
+    <input id="delete-id" placeholder="Törlendő ID">
+    <button onclick="deleteData()">Törlés</button>
+    <div id="delete-msg"></div>
+  </section>
+  </div>
+
   <footer>
     <p>Készítők: Kotlár Botond , Neptunkód:FUHZ21 </p>
   </footer>
