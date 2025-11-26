@@ -1,10 +1,9 @@
-const apiUrl = "https://gpozx9-fuhz21.ptzal.hu/ajax.php";
-const userCode = "FUHZ21abc123";
+const apiUrl = "http://beadui.ptzal.hu/ajax.php";
+
 
 function readData() {
   const formData = new URLSearchParams();
   formData.append("op", "read");
-  formData.append("code", userCode);
 
   fetch(apiUrl, {
     method: "POST",
@@ -36,6 +35,7 @@ function readData() {
     });
 }
 
+
 function createData() {
   const name = document.getElementById("create-name").value.trim();
   const height = document.getElementById("create-height").value.trim();
@@ -52,7 +52,6 @@ function createData() {
   formData.append("name", name);
   formData.append("height", height);
   formData.append("weight", weight);
-  formData.append("code", userCode);
 
   fetch(apiUrl, {
     method: "POST",
@@ -62,12 +61,12 @@ function createData() {
     .then(text => msg.innerText = `Válasz: ${text}`);
 }
 
+
 function getDataForId() {
   const id = document.getElementById("update-id").value.trim();
   const msg = document.getElementById("update-msg");
   const formData = new URLSearchParams();
   formData.append("op", "read");
-  formData.append("code", userCode);
 
   fetch(apiUrl, {
     method: "POST",
@@ -90,6 +89,7 @@ function getDataForId() {
     });
 }
 
+
 function updateData() {
   const id = document.getElementById("update-id").value.trim();
   const name = document.getElementById("update-name").value.trim();
@@ -108,7 +108,6 @@ function updateData() {
   formData.append("name", name);
   formData.append("height", height);
   formData.append("weight", weight);
-  formData.append("code", userCode);
 
   fetch(apiUrl, {
     method: "POST",
@@ -117,6 +116,7 @@ function updateData() {
     .then(res => res.text())
     .then(text => msg.innerText = `Válasz: ${text}`);
 }
+
 
 function deleteData() {
   const id = document.getElementById("delete-id").value.trim();
@@ -125,7 +125,6 @@ function deleteData() {
   const formData = new URLSearchParams();
   formData.append("op", "delete");
   formData.append("id", id);
-  formData.append("code", userCode);
 
   fetch(apiUrl, {
     method: "POST",
@@ -134,6 +133,7 @@ function deleteData() {
     .then(res => res.text())
     .then(text => msg.innerText = `Válasz: ${text}`);
 }
+
 
 function deleteUpdateId() {
   document.getElementById("update-id").value = "";

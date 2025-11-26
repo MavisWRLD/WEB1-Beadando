@@ -8,7 +8,7 @@ $fields	= [];
 	}
 
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "http://gamf.nhely.hu/ajax2/");
+	curl_setopt($ch, CURLOPT_URL, "beadapi.ptzal.hu:3000/api/data");
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_POST, true);
 	curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36");
