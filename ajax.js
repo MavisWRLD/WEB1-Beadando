@@ -1,4 +1,4 @@
-const apiUrl = "http://beadui.ptzal.hu/ajax.php";
+const apiUrl = "beadapi.ptzal.hu:3000/api/data";
 
 
 function readData() {
