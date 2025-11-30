@@ -60,6 +60,8 @@ function createData() {
   //  .then(res => res.text())
   //  .then(text => msg.innerText = `Válasz: ${text}`);
 
+  
+
   var xhr = new XMLHttpRequest();
   xhr.open("POST", apiUrl, true);
   xhr.setRequestHeader("Content-Type", "application/json");
