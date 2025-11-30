@@ -1,4 +1,4 @@
-const apiUrl = "beadapi.ptzal.hu:3000/api/data";
+const apiUrl = "http://beadapi.ptzal.hu:3000/api/data";
 
 
 function readData() {
@@ -53,12 +53,25 @@ function createData() {
   formData.append("height", height);
   formData.append("weight", weight);
 
-  fetch(apiUrl, {
-    method: "POST",
-    body: formData
-  })
-    .then(res => res.text())
-    .then(text => msg.innerText = `Válasz: ${text}`);
+  //fetch(apiUrl, {
+  //  method: "POST",
+  //  body: formData
+ // })
+  //  .then(res => res.text())
+  //  .then(text => msg.innerText = `Válasz: ${text}`);
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", apiUrl, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      name.value = "";
+      height.value = "";
+      weight.value = "";
+      msg.innerText = `Válasz: ${xhr.responseText}`;
+    }
+  }
+  xhr.send(formData);
 }
 
 
